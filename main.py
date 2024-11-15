@@ -32,6 +32,11 @@ city_code_map = {}
 state_code_map = {}
 
 
+# Ping endpoint to keep the server active
+@app.get("/ping")
+async def ping():
+    return {"message": "Server is active"}
+
 # Function to read and preprocess the uploaded file
 async def read_and_preprocess_file(file: UploadFile):
     global city_code_map, state_code_map
