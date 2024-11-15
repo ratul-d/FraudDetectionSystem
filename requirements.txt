@@ -3,4 +3,4 @@ uvicorn
 joblib
 pandas
 python-multipart
-scikit-learn==1.5.2
+scikit-learn==1.3.2
