@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+
+
+        <h1 class="center-align oxanium-header">Fraud Detection System</h1>
+
+        <!-- How to Use Section -->
+        <div id="how-to-use" class="how-to-use-section">
+            <h2 class="oxanium-header how-to-use-header">How to Use?</h2>
+            <p class="oxanium-text">To use this system, please upload an Excel file of transactions with the following format:</p>
+            <a href="transactions.csv" download="transactions.csv">
+                <img src="example.png" alt="Example of Excel format" class="example-image">
+            </a>
+            <p class="oxanium-text">Click on the image to download an example file.</p>
+        </div>
+
+        <!-- Form for Excel Upload -->
+        <form id="upload-form" enctype="multipart/form-data">
+            <div class="file-field input-field small-btn-container">
+                <div class="btn small-btn">
+                    <span>Upload Excel</span>
+                    <input type="file" id="file-input" accept=".xlsx, .xls, .csv">
+                </div>
+                <div id="progress-container" style="display: none; margin-left: 10px;">
+                    <div class="progress">
+                        <div class="indeterminate"></div>
+                    </div>
+                </div>
+                <div class="file-name-container">
+                    <span id="file-name" class="file-name-display"></span>
+                </div>
+            </div>
+            <button id="checkFraudBtn" type="submit" class="btn medium-btn">Check for Fraud</button>
+            <span id="processing-message" class="oxanium-text" style="display: none; margin-left: 10px;">Processing... Please Wait...</span>
+        </form>
+
+        <!-- Results Section with Flex Layout -->
+        <div id="container" style="display: flex; margin-top: 20px;">
+            <div id="results" style="flex: 1; padding: 10px; display: none;">
+            </div>
+            <div id="summary" style="flex: 0 0 250px; padding: 10px; border-left: 1px solid #ccc; display: none;">
+                <h3 class="oxanium-header">Summary:</h3>
+                <p class="oxanium-text">Fraudulent Transactions: <span id="total-fraud" class="oxanium-data"></span></p>
+                <p class="oxanium-text">Legitimate Transactions: <span id="total-legit" class="oxanium-data"></span></p>
+                <p class="oxanium-text">Total Transactions: <span id="total-transactions" class="oxanium-data"></span></p>
+                <button id="toggleFraudBtn" class="btn toggle-btn">Show Only Fraud</button>
+                <p class="oxanium-text">Important Notice: While the fraud detection model is designed to provide accurate insights,
+                    it is not infallible and may sometimes produce false positives or miss fraudulent activities.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+/* styles.css */
+body {
+    background-color: #dadada;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.container {
+    margin: 50px auto;
+    max-width: 100%;
+    padding: 0;
+}
+
+#container {
+    display: flex;
+    margin-top: 20px;
+    width: 100%;
+    padding: 0;
+}
+
+#results {
+    flex: 1;
+    padding: 10px;
+    overflow: auto;
+    margin-right: 0;
+}
+
+#summary {
+    flex: 0 0 250px;
+    padding: 10px;
+    border-left: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Oxanium', sans-serif;
+    font-weight: 700;
+}
+
+.oxanium-header {
+    font-family: 'Oxanium', sans-serif;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+#results h2,
+#summary h3,
+h2.oxanium-header,
+h3.oxanium-header {
+    font-family: 'Oxanium', sans-serif !important;
+}
+
+.oxanium-text,
+#summary p {
+    font-family: 'Oxanium', sans-serif !important;
+    margin: 5px 0;
+    font-weight: 400;
+}
+
+.oxanium-data {
+    font-family: 'Oxanium', sans-serif !important;
+}
+
+.small-btn-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.small-btn {
+    background-color: #5bc2b4;
+    padding: 0 10px;
+    font-family: 'Oxanium', sans-serif;
+    font-size: 14px;
+    height: 36px;
+    line-height: 36px;
+}
+.small-btn:hover {
+    background-color: #55a69b;
+}
+
+.file-name-container {
+    border: 1px solid black;
+    height: 36px;
+    width: calc(2 * 100px);
+    font-family: 'Oxanium', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.medium-btn {
+    background-color: #5bc2b4;
+    color: white;
+    border: none;
+    display: block;
+    margin: 0 auto 20px auto;
+    padding: 0 20px;
+    height: 42px;
+    line-height: 42px;
+    font-family: 'Oxanium', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.medium-btn:hover {
+    background-color: #55a69b;
+}
+
+.medium-btn:focus {
+    background-color: #5bc2b4;
+    outline: none;
+}
+
+.file-field .small-btn:hover {
+    background-color: #55a69b;
+}
+
+.toggle-btn {
+    background-color: #5bc2b4;
+    color: white;
+    width: 100%;
+    font-family: 'Oxanium', sans-serif;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-btn:hover {
+    background-color: #55a69b;
+}
+
+.toggle-btn:focus {
+    background-color: #5bc2b4;
+    outline: none;
+}
+
+table.striped {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table.striped th,
+table.striped td {
+    padding: 11px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table.striped th {
+    background-color: #5bc2b4;
+    font-family: 'Oxanium', sans-serif;
+    color: white;
+}
+
+table.striped tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table.striped tr:hover {
+    background-color: #e0e0e0;
+}
+
+.how-to-use-section {
+    background-color: #e8e8e8;
+    padding: 5px;
+    border: 1px solid #0f0f0f;
+    border-radius: 5px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.how-to-use-section img.example-image {
+    margin-top: 10px;
+    max-width: 100%;
+    margin-bottom: 10px;
+    height: auto;
+}
+
+.how-to-use-header {
+    font-size: 35px;
+    font-family: 'Oxanium', sans-serif;
+    font-weight: 700;
+    margin-top: 15px;
+}
