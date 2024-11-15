@@ -7,6 +7,22 @@ import logging
 model = joblib.load('fraud_detection_model.joblib')
 
 app = FastAPI()
+
+from fastapi.middleware.cors import CORSMiddleware
+
+origins = [
+    "https://fraud-detection-system-pi.vercel.app",
+    "http://localhost",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 app.mount("/static", StaticFiles(directory="frontend"), name="static")
 
 logging.basicConfig(level=logging.ERROR)
