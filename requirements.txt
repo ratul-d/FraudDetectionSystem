@@ -2,3 +2,4 @@ fastapi
 uvicorn
 joblib
 pandas
+python-multipart
