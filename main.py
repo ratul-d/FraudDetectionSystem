@@ -3,6 +3,8 @@ from fastapi.staticfiles import StaticFiles
 import joblib
 import pandas as pd
 import logging
+from fastapi.responses import FileResponse
+import os
 
 model = joblib.load('fraud_detection_model.joblib')
 
@@ -14,6 +16,11 @@ origins = [
     "https://fraud-detection-system-pi.vercel.app",
     "http://localhost",
 ]
+
+@app.get("/")
+async def serve_frontend():
+    index_path = os.path.join("frontend", "index.html")
+    return FileResponse(index_path)
 
 app.add_middleware(
     CORSMiddleware,
@@ -116,3 +123,5 @@ async def upload_file(file: UploadFile = File(...)):
     except Exception as e:
         logger.error("Error occurred: %s", str(e))
         return [{"error": str(e)}]
+
+
