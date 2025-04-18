@@ -27,7 +27,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.mount("/static", StaticFiles(directory="frontend"), name="static")
+app.mount(
+    "/",
+    StaticFiles(directory="frontend", html=True),
+    name="frontend"
+)
 
 logging.basicConfig(level=logging.ERROR)
 logger = logging.getLogger(__name__)
@@ -36,10 +40,6 @@ city_code_map = {}
 state_code_map = {}
 
 
-@app.get("/")
-async def serve_frontend():
-    index_path = os.path.join("frontend", "index.html")
-    return FileResponse(index_path)
 
 # Ping endpoint to keep the server active
 @app.get("/ping")
