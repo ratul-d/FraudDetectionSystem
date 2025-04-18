@@ -17,10 +17,7 @@ origins = [
     "http://localhost",
 ]
 
-@app.get("/")
-async def serve_frontend():
-    index_path = os.path.join("frontend", "index.html")
-    return FileResponse(index_path)
+
 
 app.add_middleware(
     CORSMiddleware,
@@ -38,6 +35,11 @@ logger = logging.getLogger(__name__)
 city_code_map = {}
 state_code_map = {}
 
+
+@app.get("/")
+async def serve_frontend():
+    index_path = os.path.join("frontend", "index.html")
+    return FileResponse(index_path)
 
 # Ping endpoint to keep the server active
 @app.get("/ping")
